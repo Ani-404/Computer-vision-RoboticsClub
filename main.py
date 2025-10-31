@@ -52,18 +52,16 @@ for filename in os.listdir(folder_path):
 
     hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-    pixel_centre1 = hsv_img[cx1, cy1]
+    pixel_centre1 = hsv_img[cy1, cx1]  
     hue_value1 = int(pixel_centre1[0])
 
-    pixel_centre2 = hsv_img[cx2, cy2]
+    pixel_centre2 = hsv_img[cy2, cx2]  
     hue_value2 = int(pixel_centre2[0])
 
-    pixel_centre3 = hsv_img[cx3, cy3]
+    pixel_centre3 = hsv_img[cy3, cx3] 
     hue_value3 = int(pixel_centre3[0])
 
-
-    # assigning color
-
+    # assigning colors based on hue values
     if hue_value1 < 20:
         color1 = 'red'
     elif 40 < hue_value1 < 140:
